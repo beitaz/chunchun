@@ -1,0 +1,13 @@
+<h1>Static#index</h1>
+<p>Find me in app/views/static/index.html.erb</p>
+
+<i class="fa fa-dashboard"></i>
+<%= link_to '测试', '#', class: 'btn btn-primary' %>
+<select type="text" value="测试 select2 是否集成" class="select2"></select>
+
+<script>
+$.fn.select2.defaults.set('theme', 'bootstrap');
+$.fn.select2.defaults.set('language', 'zh-CN');
+$.fn.select2.defaults.set('width', '100%');
+$('.select2').select2();
+</script>
