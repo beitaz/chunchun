@@ -25,6 +25,13 @@ module Backend
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins '*'
+        resource '*', headers: :any, methods: [:get, :post, :delete, :put, :patch, :options, :head]
+      end
+    end
+
     $redis = Redis.new(host: 'localhost', port: 6379)
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '**', '*.{rb,yml}')]

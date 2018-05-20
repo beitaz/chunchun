@@ -48,7 +48,9 @@ gem 'devise'
 gem 'pundit'
 
 # API
+gem 'rack-cors'
 gem 'grape'
+gem 'grape-entity'
 
 group :development, :test do
   gem 'rubocop'
