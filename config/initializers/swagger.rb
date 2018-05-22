@@ -7,3 +7,9 @@ GrapeSwaggerRails.options.app_url  = 'http://localhost:3000'
 # end
 
 GrapeSwaggerRails.options.app_name = 'Swagger'
+
+# Authentications
+GrapeSwaggerRails.options.api_auth     = 'Bearer' # Or 'bearer' for OAuth
+GrapeSwaggerRails.options.api_key_name = 'Authorization'
+GrapeSwaggerRails.options.api_key_type = 'header'
+

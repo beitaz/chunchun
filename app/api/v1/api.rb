@@ -3,6 +3,14 @@ class V1::API < Grape::API
   logger.level = Logger::INFO
 
   helpers do
+    def current_user
+      Admin.find_by(auth_token: request.headers['Authorization'])
+    end
+
+    def authorized?
+      error!('401 Unauthorized', 401) unless current_user
+    end
+
     params :pagination do
       optional :page, type: Integer
       optional :per_page, type: Integer
@@ -14,12 +22,15 @@ class V1::API < Grape::API
   end
 
   desc 'Test api version'
-  params do
-    use :pagination # aliases: includes, use_scope
-  end
+  # params do
+  #   use :auth
+  #   # use :pagination # aliases: includes, use_scope
+  # end
   get :debug do
+    authorized?
     'This is version 1 api'
   end
 
+  mount Auth
   mount Admins
 end

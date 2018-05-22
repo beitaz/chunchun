@@ -3,6 +3,7 @@
 # Table name: admins
 #
 #  id                     :bigint(8)        not null, primary key
+#  auth_token             :string(255)
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string(255)
 #  email                  :string(255)      default(""), not null
@@ -18,6 +19,7 @@
 #
 # Indexes
 #
+#  index_admins_on_auth_token            (auth_token) UNIQUE
 #  index_admins_on_email                 (email) UNIQUE
 #  index_admins_on_reset_password_token  (reset_password_token) UNIQUE
 #
