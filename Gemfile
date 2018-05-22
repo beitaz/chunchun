@@ -51,6 +51,8 @@ gem 'pundit'
 gem 'rack-cors'
 gem 'grape'
 gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-rails'
 
 group :development, :test do
   gem 'rubocop'

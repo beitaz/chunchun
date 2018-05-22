@@ -1,2 +1,8 @@
 <h1>Static#home</h1>
 <p>Find me in app/views/static/home.html.erb</p>
+
+<%= link_to '<i class="fa fa-dashboard"></i>'.html_safe, static_index_path, class: 'btn btn-primary' %>
+
+<% if admin_signed_in? %>
+<%= link_to current_admin.email, destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
+<% end %>

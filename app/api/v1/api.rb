@@ -18,6 +18,6 @@ class V1::API < Grape::API
     use :pagination # aliases: includes, use_scope
   end
   get :debug do
-    'This is version 2 api'
+    'This is version 1 api'
   end
 end
