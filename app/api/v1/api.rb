@@ -20,4 +20,6 @@ class V1::API < Grape::API
   get :debug do
     'This is version 1 api'
   end
+
+  mount Admins
 end
